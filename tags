@@ -1,0 +1,152 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC=avr-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-mmcu=$(MMCU)$/;"	m
+CS_PIN	main.c	11;"	d	file:
+Disassembly	a.S	/^Disassembly of section .bss:$/;"	l
+Disassembly	a.S	/^Disassembly of section .comment:$/;"	l
+Disassembly	a.S	/^Disassembly of section .stab:$/;"	l
+Disassembly	a.S	/^Disassembly of section .stabstr:$/;"	l
+Disassembly	a.S	/^Disassembly of section .text:$/;"	l
+F_CPU	main.c	2;"	d	file:
+ISR	main.c	/^ISR(INT0_vect)$/;"	f
+MISO_PIN	main.c	13;"	d	file:
+MMCU	Makefile	/^MMCU=attiny13$/;"	m
+MOSI_PIN	main.c	12;"	d	file:
+OBJCOPY	Makefile	/^OBJCOPY=avr-objcopy$/;"	m
+PROJECT	Makefile	/^PROJECT=led$/;"	m
+SCK_PIN	main.c	14;"	d	file:
+SOFT_RX_DDR	main.c	21;"	d	file:
+SOFT_RX_PIN	main.c	20;"	d	file:
+SOFT_RX_PORT	main.c	22;"	d	file:
+SOFT_TX_DDR	main.c	18;"	d	file:
+SOFT_TX_PIN	main.c	16;"	d	file:
+SOFT_TX_PORT	main.c	17;"	d	file:
+SOURCES	Makefile	/^SOURCES=main.c$/;"	m
+SPI_DDR	main.c	9;"	d	file:
+SPI_MOSI_HIGH	main.c	29;"	d	file:
+SPI_MOSI_LOW	main.c	30;"	d	file:
+SPI_PIN	main.c	10;"	d	file:
+SPI_PORT	main.c	8;"	d	file:
+SPI_SCK_HIGH	main.c	27;"	d	file:
+SPI_SCK_LOW	main.c	28;"	d	file:
+a	a.S	/^   a:	00 00       	nop$/;"	l
+a	a.S	/^   a:	12 c0       	rjmp	.+36     	; 0x30 <__bad_interrupt>$/;"	l
+a	a.S	/^   a:	20 34       	cpi	r18, 0x40	; 64$/;"	l
+a	a.S	/^   a:	6d 38       	cpi	r22, 0x8D	; 141$/;"	l
+a0	a.S	/^  a0:	08 95       	ret$/;"	l
+a0	a.S	/^  a0:	44 00       	.word	0x0044	; ????$/;"	l
+a2	a.S	/^  a2:	1f 92       	push	r1$/;"	l
+a2	a.S	/^  a2:	3c 00       	.word	0x003c	; ????$/;"	l
+a4	a.S	/^  a4:	0f 92       	push	r0$/;"	l
+a4	a.S	/^  a4:	10 00       	.word	0x0010	; ????$/;"	l
+a6	a.S	/^  a6:	00 00       	nop$/;"	l
+a6	a.S	/^  a6:	0f b6       	in	r0, 0x3f	; 63$/;"	l
+a8	a.S	/^  a8:	00 00       	nop$/;"	l
+a8	a.S	/^  a8:	0f 92       	push	r0$/;"	l
+aa	a.S	/^  aa:	00 00       	nop$/;"	l
+aa	a.S	/^  aa:	11 24       	eor	r1, r1$/;"	l
+ac	a.S	/^  ac:	2f 93       	push	r18$/;"	l
+ac	a.S	/^  ac:	44 00       	.word	0x0044	; ????$/;"	l
+ae	a.S	/^  ae:	3d 00       	.word	0x003d	; ????$/;"	l
+ae	a.S	/^  ae:	8f 93       	push	r24$/;"	l
+b0	a.S	/^  b0:	12 00       	.word	0x0012	; ????$/;"	l
+b0	a.S	/^  b0:	9f 93       	push	r25$/;"	l
+b2	a.S	/^  b2:	00 00       	nop$/;"	l
+b2	a.S	/^  b2:	10 92 60 00 	sts	0x0060, r1$/;"	l
+b4	a.S	/^  b4:	00 00       	nop$/;"	l
+b6	a.S	/^  b6:	00 00       	nop$/;"	l
+b6	a.S	/^  b6:	89 b7       	in	r24, 0x39	; 57$/;"	l
+b8	a.S	/^  b8:	44 00       	.word	0x0044	; ????$/;"	l
+b8	a.S	/^  b8:	8b 7f       	andi	r24, 0xFB	; 251$/;"	l
+ba	a.S	/^  ba:	3e 00       	.word	0x003e	; ????$/;"	l
+ba	a.S	/^  ba:	89 bf       	out	0x39, r24	; 57$/;"	l
+bc	a.S	/^  bc:	14 00       	.word	0x0014	; ????$/;"	l
+bc	a.S	/^  bc:	88 b7       	in	r24, 0x38	; 56$/;"	l
+be	a.S	/^  be:	00 00       	nop$/;"	l
+be	a.S	/^  be:	84 60       	ori	r24, 0x04	; 4$/;"	l
+c	a.S	/^   c:	01 00       	.word	0x0001	; ????$/;"	l
+c	a.S	/^   c:	11 c0       	rjmp	.+34     	; 0x30 <__bad_interrupt>$/;"	l
+c	a.S	/^   c:	2e 38       	cpi	r18, 0x8E	; 142$/;"	l
+c	a.S	/^   c:	6a 39       	cpi	r22, 0x9A	; 154$/;"	l
+c0	a.S	/^  c0:	00 00       	nop$/;"	l
+c0	a.S	/^  c0:	88 bf       	out	0x38, r24	; 56$/;"	l
+c2	a.S	/^  c2:	00 00       	nop$/;"	l
+c2	a.S	/^  c2:	12 be       	out	0x32, r1	; 50$/;"	l
+c4	a.S	/^  c4:	44 00       	.word	0x0044	; ????$/;"	l
+c4	a.S	/^  c4:	89 b7       	in	r24, 0x39	; 57$/;"	l
+c6	a.S	/^  c6:	3f 00       	.word	0x003f	; ????$/;"	l
+c6	a.S	/^  c6:	84 60       	ori	r24, 0x04	; 4$/;"	l
+c8	a.S	/^  c8:	14 00       	.word	0x0014	; ????$/;"	l
+c8	a.S	/^  c8:	89 bf       	out	0x39, r24	; 57$/;"	l
+ca	a.S	/^  ca:	00 00       	nop$/;"	l
+ca	a.S	/^  ca:	88 e0       	ldi	r24, 0x08	; 8$/;"	l
+cc	a.S	/^  cc:	00 00       	nop$/;"	l
+cc	a.S	/^  cc:	90 e0       	ldi	r25, 0x00	; 0$/;"	l
+ce	a.S	/^  ce:	00 00       	nop$/;"	l
+ce	a.S	/^  ce:	08 b6       	in	r0, 0x38	; 56$/;"	l
+d0	a.S	/^  d0:	02 fe       	sbrs	r0, 2$/;"	l
+d0	a.S	/^  d0:	44 00       	.word	0x0044	; ????$/;"	l
+d2	a.S	/^  d2:	40 00       	.word	0x0040	; ????$/;"	l
+d2	a.S	/^  d2:	fd cf       	rjmp	.-6      	; 0xce <__vector_1+0x2c>$/;"	l
+d4	a.S	/^  d4:	14 00       	.word	0x0014	; ????$/;"	l
+d4	a.S	/^  d4:	28 b7       	in	r18, 0x38	; 56$/;"	l
+d6	a.S	/^  d6:	00 00       	nop$/;"	l
+d6	a.S	/^  d6:	24 60       	ori	r18, 0x04	; 4$/;"	l
+d8	a.S	/^  d8:	00 00       	nop$/;"	l
+d8	a.S	/^  d8:	28 bf       	out	0x38, r18	; 56$/;"	l
+da	a.S	/^  da:	00 00       	nop$/;"	l
+da	a.S	/^  da:	20 91 60 00 	lds	r18, 0x0060$/;"	l
+dc	a.S	/^  dc:	44 00       	.word	0x0044	; ????$/;"	l
+de	a.S	/^  de:	22 0f       	add	r18, r18$/;"	l
+de	a.S	/^  de:	41 00       	.word	0x0041	; ????$/;"	l
+deselect_chip	main.c	26;"	d	file:
+e	a.S	/^   e:	00 00       	nop$/;"	l
+e	a.S	/^   e:	10 c0       	rjmp	.+32     	; 0x30 <__bad_interrupt>$/;"	l
+e	a.S	/^   e:	2e 32       	cpi	r18, 0x2E	; 46$/;"	l
+e	a.S	/^   e:	2e 73       	andi	r18, 0x3E	; 62$/;"	l
+e0	a.S	/^  e0:	14 00       	.word	0x0014	; ????$/;"	l
+e0	a.S	/^  e0:	20 93 60 00 	sts	0x0060, r18$/;"	l
+e2	a.S	/^  e2:	00 00       	nop$/;"	l
+e4	a.S	/^  e4:	00 00       	nop$/;"	l
+e4	a.S	/^  e4:	b1 9b       	sbis	0x16, 1	; 22$/;"	l
+e6	a.S	/^  e6:	00 00       	nop$/;"	l
+e6	a.S	/^  e6:	03 c0       	rjmp	.+6      	; 0xee <__vector_1+0x4c>$/;"	l
+e8	a.S	/^  e8:	21 60       	ori	r18, 0x01	; 1$/;"	l
+e8	a.S	/^  e8:	44 00       	.word	0x0044	; ????$/;"	l
+ea	a.S	/^  ea:	20 93 60 00 	sts	0x0060, r18$/;"	l
+ea	a.S	/^  ea:	42 00       	.word	0x0042	; ????$/;"	l
+ec	a.S	/^  ec:	14 00       	.word	0x0014	; ????$/;"	l
+ee	a.S	/^  ee:	00 00       	nop$/;"	l
+ee	a.S	/^  ee:	01 97       	sbiw	r24, 0x01	; 1$/;"	l
+f0	a.S	/^  f0:	00 00       	nop$/;"	l
+f0	a.S	/^  f0:	00 97       	sbiw	r24, 0x00	; 0$/;"	l
+f2	a.S	/^  f2:	00 00       	nop$/;"	l
+f2	a.S	/^  f2:	69 f7       	brne	.-38     	; 0xce <__vector_1+0x2c>$/;"	l
+f4	a.S	/^  f4:	44 00       	.word	0x0044	; ????$/;"	l
+f4	a.S	/^  f4:	81 e0       	ldi	r24, 0x01	; 1$/;"	l
+f6	a.S	/^  f6:	43 00       	.word	0x0043	; ????$/;"	l
+f6	a.S	/^  f6:	80 93 61 00 	sts	0x0061, r24$/;"	l
+f8	a.S	/^  f8:	14 00       	.word	0x0014	; ????$/;"	l
+fa	a.S	/^  fa:	00 00       	nop$/;"	l
+fa	a.S	/^  fa:	08 b6       	in	r0, 0x38	; 56$/;"	l
+fc	a.S	/^  fc:	00 00       	nop$/;"	l
+fc	a.S	/^  fc:	02 fe       	sbrs	r0, 2$/;"	l
+fe	a.S	/^  fe:	00 00       	nop$/;"	l
+fe	a.S	/^  fe:	fd cf       	rjmp	.-6      	; 0xfa <__vector_1+0x58>$/;"	l
+main	main.c	/^void main()$/;"	f
+pwm_init	main.c	/^void pwm_init(void)$/;"	f
+read_miso	main.c	24;"	d	file:
+select_chip	main.c	25;"	d	file:
+spi_init	main.c	/^void spi_init(void)$/;"	f
+spi_transmit_receive	main.c	/^uint8_t spi_transmit_receive(uint8_t c)$/;"	f
+uart_print	main.c	/^uart_print(char *p)$/;"	f
+uart_rx	main.c	/^unsigned char uart_rx;$/;"	v
+uart_rx_flag	main.c	/^volatile unsigned char uart_rx_flag;$/;"	v
+uart_rx_int_init	main.c	/^void uart_rx_int_init()$/;"	f
+uart_send_byte	main.c	/^void uart_send_byte(unsigned char data)$/;"	f
+uart_tx_init	main.c	/^void uart_tx_init()$/;"	f

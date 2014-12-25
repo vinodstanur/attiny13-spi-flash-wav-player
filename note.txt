@@ -1,0 +1,7 @@
+CS -> PB3
+MISO -> PB4
+SCK -> PB1
+MOSI -> PB2
+
+PB0 = OC0A = PWM
+

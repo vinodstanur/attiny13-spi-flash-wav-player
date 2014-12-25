@@ -1,0 +1,133 @@
+#include <avr/io.h>
+#define F_CPU 9600000
+#include <util/delay.h>
+#include <avr/power.h>
+
+#define SPI_PORT	PORTB
+#define SPI_DDR		DDRB
+#define SPI_PIN		PINB
+#define CS_PIN		(1<<PB3)
+#define MOSI_PIN	(1<<PB2)
+#define MISO_PIN 	(1<<PB4)
+#define SCK_PIN 	(1<<PB1)
+
+#define read_miso()		(SPI_PIN & (MISO_PIN))
+#define select_chip()	(SPI_PORT &= ~(CS_PIN)) 
+#define deselect_chip()	(SPI_PORT |= (CS_PIN)) 
+#define SPI_SCK_HIGH()	(SPI_PORT |= SCK_PIN)
+#define SPI_SCK_LOW()	(SPI_PORT &= ~SCK_PIN)
+#define SPI_MOSI_HIGH()	(SPI_PORT |= MOSI_PIN)
+#define SPI_MOSI_LOW()	(SPI_PORT &= ~MOSI_PIN)
+
+
+
+
+void spi_init(void)
+{
+	SPI_DDR = (MOSI_PIN)|(SCK_PIN)|(CS_PIN);
+	deselect_chip();
+	SPI_SCK_HIGH();
+}
+
+void pwm_init(void)
+{
+	TCCR0B |= (1 << CS00);
+	TCCR0A |= (1 << WGM01) | (1 << WGM00);
+	TCCR0A |= (1 << COM0A1);
+	DDRB |= 1<<PB0;
+}
+
+void uart_send_byte(unsigned char data)
+{
+	unsigned char i;
+	TIMSK0 &= ~(1<<OCIE0A);
+	TIFR0 |= 1<<OCF0A;
+	TCNT0 = 0;
+	TIMSK0 |= 1<OCIE0A;
+	PORTB &= ~(1<<PB0);
+	while(!(TIFR0 & (1<<OCF0A)));
+	TIFR0 |= 1<<OCF0A;
+	for(i=0;i<8;i++) {
+			if(data & 1)
+				PORTB |= 1<<PB0;
+			else 
+				PORTB &= ~(1<<PB0);
+			data >>= 1;
+			while(!(TIFR0 & (1<<OCF0A)));
+			TIFR0 |= 1<<OCF0A;
+	}
+	PORTB |= 1<<PB0;
+	while(!(TIFR0 & (1<<OCF0A)));
+	TIFR0 |= 1<<OCF0A;
+}
+
+void uart_init()
+{
+	TCCR0A = 1 << WGM01;   // compare mode
+	TCCR0B = (1 << CS00);
+	ADMUX |= 1<<REFS0;
+	DDRB |= 1<<PB0;
+	OCR0A = 75;
+
+}
+uint8_t spi_transmit_receive(uint8_t c)
+{
+	uint8_t i;
+	for(i = 0; i < 8; i++) {
+		if(c & (1<<7)) {
+			SPI_MOSI_HIGH();
+		} else {
+			SPI_MOSI_LOW();
+		}
+		SPI_SCK_LOW();
+		SPI_SCK_HIGH();
+		c <<= 1;
+		if(read_miso()) {
+			c |= 1;
+		}
+	}	
+	return c;
+}
+
+		
+
+void main()
+{
+		uint8_t c;
+
+		clock_prescale_set(clock_div_1);	//set clock to 9.6MHz, no prescaler
+		
+
+		DDRB |= 1<<PB3;
+		PORTB |= 1<<PB3;
+		DDRB |= 1<<PB0;
+		PORTB |= 1<<PB0;
+
+		uart_init();
+		
+
+
+		DDRB &= ~(1<<PB0);
+		PORTB |= 1<<PB0;
+		_delay_ms(10);
+		if((PINB & (1<<PB0)) == 0)
+			while(1);
+
+		spi_init();	//init spi. MODE 3
+		pwm_init();	//fast pwm, prescaler 1
+			
+		deselect_chip();
+		select_chip();
+		
+		spi_transmit_receive(0x03);
+		spi_transmit_receive(0x0);
+		spi_transmit_receive(0x0);
+		spi_transmit_receive(0x0);
+		
+		while(1) {
+			c = spi_transmit_receive(0xff);
+			OCR0A = c;
+			_delay_us(100);
+		}
+		
+}
